@@ -17,8 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware('auth')->group(function() {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/forms', function () {
+        return view('forms.form');
+    })->name('forms');
+
+    Route::get('/tables', function () {
+        return view('tables.table');
+    })->name('tables');
+
+    Route::get('/errors', function () {
+        return view('errors.error-page');
+    })->name('errors');
+});
+
 
 require __DIR__.'/auth.php';

@@ -13,22 +13,60 @@
         <!-- Scripts -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+            @include('layouts.include.header')
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+            @include('layouts.include.sidebar')
 
             <!-- Page Content -->
-            <main>
+            <main class="page-content">
                 {{ $slot }}
             </main>
         </div>
+
+        <script>
+            $(function() {
+                let isOpen = false;
+
+                $('.user-setting').on('click', function () {
+                    $('.dropdown-menu').toggleClass("block");
+                });
+    
+                $('.mobile-toggle-icon').on('click', function () {
+                    toggleElementsMenu();
+                    
+                    if ($('.menu-group').hasClass('open')) {
+                        $('.menu-group.open > .menu-parent').addClass('bg-slate-600');
+                        $('.menu-group').removeClass('open');
+                        isOpen = true;
+                    } else if (isOpen) {
+                        $('.menu-group > .menu-parent').removeClass('bg-slate-600');
+                        $('.menu-group').addClass('open');
+                        isOpen = false;
+                    }
+                });
+    
+                $('.menu-parent').on('click', function () {
+                    const group = $(this).closest('.menu-group');
+                    group.toggleClass('open');
+
+                    if (isOpen) {
+                        toggleElementsMenu();
+                    }
+                });
+
+                function toggleElementsMenu() {
+                    $('.sidebar').toggleClass('left-0 xl:w-[70px]');
+                    $('.top-header').toggleClass('left-0 xl:left-[70px]');
+                    $('.page-content').toggleClass('xl:ml-[70px]');
+                    $('.menu-title, .menu-label, .sidebar-title').toggleClass('hidden');
+                    $('.menu-parent').toggleClass('has-arrow');
+                    $('.menu-parent, .menu-link').toggleClass('justify-center !border-l-0');
+                }
+            })
+        </script>
     </body>
 </html>

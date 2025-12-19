@@ -1,3 +1,210 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .page-content {
+        @apply transition-all duration-200 ease-in-out ml-0 xl:ml-[260px] mt-[60px];
+    }
+
+    .top-header {
+        @apply transition-all duration-200 ease-in-out fixed top-0 left-0 xl:left-[260px] right-0 z-30;
+    }
+
+    .navbar {
+        @apply flex items-center gap-3 h-[60px] px-6
+               bg-emerald-600 text-white
+               shadow-sm;
+    }
+
+    .navbar-expand {
+        @apply flex-nowrap;
+    }
+
+    /* ===== Mobile Toggle ===== */
+
+    .mobile-toggle-icon {
+        @apply cursor-pointer text-2xl flex flex-col items-center w-5 gap-1;
+    }
+
+    .mobile-toggle-icon span {
+        @apply w-full h-1 rounded-sm bg-white;
+    }
+
+    /* ===== Navbar Right ===== */
+
+    .top-navbar-right {
+        @apply ml-auto flex items-center;
+    }
+
+    .navbar-nav {
+        @apply flex items-center gap-4;
+    }
+
+    .nav-item {
+        @apply relative;
+    }
+
+    .nav-link {
+        @apply text-white hover:text-gray-200 transition;
+    }
+
+    /* ===== User Avatar ===== */
+
+    .user-setting {
+        @apply flex items-center cursor-pointer;
+    }
+
+    .user-img {
+        @apply w-9 h-9 rounded-full object-cover border;
+    }
+
+    /* ===== Dropdown ===== */
+
+    .dropdown {
+        @apply relative;
+    }
+
+    .dropdown-menu {
+        @apply absolute right-0 mt-3 w-64
+               bg-white text-gray-800
+               rounded-lg shadow-lg
+               hidden;
+    }
+
+    .dropdown-item {
+        @apply flex items-center gap-3 px-4 py-3
+               text-sm hover:bg-gray-100
+               transition;
+    }
+
+    .dropdown-divider {
+        @apply my-2 border-t border-gray-200;
+    }
+
+    /* ===== Dropdown User Header ===== */
+
+    .dropdown-user-name {
+        @apply text-sm font-semibold;
+    }
+
+    .dropdown-user-designation {
+        @apply text-xs text-gray-500;
+    }
+
+    /* ============ SIDEBAR ============= */
+
+    .sidebar {
+        @apply transition-all duration-200 ease-in-out fixed top-0 left-[-300px] xl:left-0 h-screen w-[260px]
+               bg-slate-800 text-slate-200
+               flex flex-col z-40;
+    }
+
+    .sidebar-header {
+        @apply flex items-center gap-3
+               h-[60px] px-4
+               border-b border-slate-700;
+    }
+
+    .sidebar-logo {
+        @apply w-8 h-8;
+    }
+
+    .sidebar-title {
+        @apply text-lg font-semibold;
+    }
+
+    .sidebar-toggle {
+        @apply ml-auto text-xl text-slate-300 hover:text-white;
+    }
+
+    /* ===== Navigation ===== */
+
+    .sidebar-nav {
+        @apply flex-1 overflow-y-auto;
+    }
+
+    .sidebar-menu {
+        @apply flex flex-col py-4;
+    }
+
+    .menu-label {
+        @apply px-4 py-3 text-xs uppercase
+               text-slate-400 tracking-wider;
+    }
+
+    /* ===== Menu Items ===== */
+
+    .menu-link,
+    .menu-parent {
+        @apply flex items-center gap-3
+               px-4 py-3 w-full
+               text-left
+               hover:bg-slate-600 hover:text-white border-l-4 border-transparent hover:border-white rounded
+               transition box-border;
+    }
+    .menu-link.active,
+    .menu-children a.active {
+        @apply bg-slate-600 text-white border-white;
+    }
+
+    .menu-parent {
+        @apply relative;
+    }
+
+    .menu-icon {
+        @apply text-lg;
+    }
+
+    .menu-title {
+        @apply text-sm font-medium;
+    }
+
+    /* ===== Submenus ===== */
+
+    .menu-group {
+        @apply flex flex-col;
+    }
+
+    .menu-children {
+        @apply overflow-hidden max-h-0 flex-col
+               transition-all duration-300 ease-in-out;
+    }
+
+    .menu-group,
+    .sidebar-menu > li,
+    .menu-children li {
+        @apply px-3 py-1;
+    }
+
+    .menu-children li:first-child {
+        @apply py-2;
+    }
+
+    .menu-children li {
+        @apply pr-0;
+    }
+
+    .menu-children a {
+        @apply px-4 py-2 text-sm
+               text-slate-300 box-border
+               hover:text-white hover:bg-slate-600 border-l-4 border-transparent hover:border-white block w-full rounded;
+    }
+
+    .menu-group.open > .menu-children {
+        @apply max-h-64;
+    }
+
+    .menu-group.open > .menu-parent {
+        @apply border-white bg-slate-600 box-border;
+    }
+
+    /* Chevron Icon */
+    .menu-group.open > .menu-parent.has-arrow::after {
+        @apply rotate-[-135deg] translate-y-0;
+    }
+
+    .menu-parent.has-arrow::after {
+        @apply absolute transition-all ease-in-out content-[''] w-[.5em] h-[.5em] border-solid border-t-2 border-l-2 border-r-0 border-b-0 right-[15px] -rotate-45 -translate-y-1/2 origin-top top-1/2;
+    }
+}
