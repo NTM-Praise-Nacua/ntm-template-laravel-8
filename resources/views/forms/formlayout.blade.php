@@ -94,8 +94,8 @@
                             Profile Photo
                         </div>
                         <div class="flex flex-grow px-2">
-                            <div class="w-1/12">
-                                <img src="assets/images/logo-icon.png" class="profile-img w-10 h-10 rounded-full border" alt="profile">
+                            <div class="w-1/6">
+                                <img src="assets/images/logo-icon.png" class="profile-img w-16 h-16 rounded-full border" alt="profile">
                             </div>
                             <div class="flex-grow">
                                 <div class="upload-area mb-5">

@@ -1646,6 +1646,12 @@ hr {
 .w-10 {
   width: 2.5rem;
 }
+.w-16 {
+  width: 4rem;
+}
+.w-1\/6 {
+  width: 16.666667%;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
