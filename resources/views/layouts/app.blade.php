@@ -66,6 +66,10 @@
                     $('.menu-parent').toggleClass('has-arrow');
                     $('.menu-parent, .menu-link').toggleClass('justify-center !border-l-0');
                 }
+
+                $('#logoutbtn').on('click', function() {
+                    $('#logoutform').submit();
+                });
             })
         </script>
     </body>

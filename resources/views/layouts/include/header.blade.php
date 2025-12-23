@@ -62,7 +62,10 @@
                         <li>
                             <a class="dropdown-item" href="#">
                                 {{-- <i class="bi bi-lock-fill"></i> --}}
-                                <span>Logout</span>
+                                <span id="logoutbtn">Logout</span>
+                                <form id="logoutform" action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                </form>
                             </a>
                         </li>
                     </ul>
