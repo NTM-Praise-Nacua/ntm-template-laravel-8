@@ -11,6 +11,14 @@
                 </div>
             </div>
 
+            <h2 class="text-3xl mb-1 font-bold">Text Area</h2>
+            <hr>
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-4">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <textarea class="input" name="" id="" rows="5" placeholder=".input works with textarea"></textarea>
+                </div>
+            </div>
+
             <h2 class="text-3xl mb-1 font-bold">Select Inputs</h2>
             <hr>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-4">
@@ -38,7 +46,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-4">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <button type="button" class="btn-primary">Primary</button>
-                    <button type="button" class="btn-secondary">Secondary</button>
+                    <button type="button" class="btn-secondary">Secondary - Light</button>
+                    <button type="button" class="btn-secondary-dark">Secondary - Dark</button>
                     <button type="button" class="btn-success">Success</button>
                     <button type="button" class="btn-warning">Warning</button>
                     <button type="button" class="btn-danger">Danger</button>

@@ -73,13 +73,13 @@
         @apply absolute right-0 mt-3 w-64
                bg-white text-gray-800
                rounded-lg shadow-lg
-               hidden;
+               hidden p-2;
     }
 
     .dropdown-item {
         @apply flex items-center gap-3 px-4 py-3
                text-sm hover:bg-gray-100
-               transition;
+               transition rounded-lg;
     }
 
     .dropdown-divider {
@@ -250,6 +250,10 @@
 
     .btn-secondary {
         @apply btn bg-gray-50 hover:shadow-md active:shadow-none text-gray-700 shadow;
+    }
+
+    .btn-secondary-dark {
+        @apply btn bg-gray-50 hover:bg-gray-200 active:bg-gray-300 text-gray-700;
     }
 
     .btn-success {
