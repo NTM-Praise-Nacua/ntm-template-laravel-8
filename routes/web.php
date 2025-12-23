@@ -26,6 +26,10 @@ Route::middleware('auth')->group(function() {
         return view('forms.form');
     })->name('forms');
 
+    Route::get('/forms-layout', function () {
+        return view('forms.formlayout');
+    })->name('forms.layout');
+
     Route::get('/tables', function () {
         return view('tables.table');
     })->name('tables');

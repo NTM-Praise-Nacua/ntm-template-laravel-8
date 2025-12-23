@@ -1,10 +1,11 @@
 @php
     $isDashboard = url()->current() == route('dashboard');
     $isForm = url()->current() == route('forms');
+    $isFormLayout = url()->current() == route('forms.layout');
     $isTable = url()->current() == route('tables');
     $isError = url()->current() == route('errors');
 
-    $isFormTable = $isForm || $isTable;
+    $isFormTable = $isForm || $isTable || $isFormLayout;
 @endphp
 
 <aside class="sidebar">
@@ -36,6 +37,7 @@
                 </button>
                 <ul class="menu-children">
                     <li><a href="{{ route('forms') }}" class="{{ $isForm ? 'active' : '' }}">Form</a></li>
+                    <li><a href="{{ route('forms.layout') }}" class="{{ $isFormLayout ? 'active' : '' }}">Form Layouts</a></li>
                     <li><a href="{{ route('tables') }}" class="{{ $isTable ? 'active' : '' }}">Data Table</a></li>
                 </ul>
             </li>

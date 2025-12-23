@@ -66,7 +66,7 @@
                             <input type="file" name="single_file" id="single_file" class="file-input-sm" multiple>
                         </div>
                         <div class="flex-1">
-                            <p>Design for drag style file upload</p>
+                            <p>Dropzone File Upload <span class="text-sm text-red-800 italic">(Design only)</span></p>
                             <div class="upload-area">
                                 <div class="fileIcon">
                                     <i class="fa-regular fa-file"></i>
